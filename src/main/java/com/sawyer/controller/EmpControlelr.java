@@ -29,7 +29,6 @@ public class EmpControlelr {
         return "ems/emplist";
     }
 
-
     @PostMapping(value = "/save")
     public String save(Emp emp) {
         empService.save(emp);

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -26,7 +27,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
 
     /**
      * 注册方法
@@ -47,7 +47,6 @@ public class UserController {
         }
     }
 
-
     /**
      * 生成验证码
      *
@@ -67,7 +66,6 @@ public class UserController {
         ImageIO.write(image, "png", os);
     }
 
-
     @PostMapping(value = "/login")
     public String login(String username, String password) {
         User login = userService.login(username, password);
@@ -78,16 +76,10 @@ public class UserController {
         }
     }
 
-//    @PostMapping(value = "/login")
-//    public String indexPage(String username, String password) {
-//        User login = userService.login(username, password);
-//        if (login != null) {
-//            return "redirect:/emp/findAll";
-//        } else {
-//            return "redirect:/index";
-//        }
-//    }
 
-
+    @PostMapping(value = "/test")
+    public String indexPage(String username) {
+        
+    }
 
 }

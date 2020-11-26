@@ -34,6 +34,4 @@ public class IndexController {
         return "pages/index";
     }
 
-
-
 }
