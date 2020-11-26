@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.sawyer.dao.BlogDao">
+
+    <!--查询所有博客-->
+    <select id="findAll" resultType="Blog">
+        select bid,title,userId,userName,date,context from t_blog
+    </select>
+
+    <!--查找一个-->
+    <select id="findOne" resultType="Blog">
+        select bid,title,userId,userName,date,context from t_blog where bid=#{bid}
+    </select>
+
+    <!--添加博客-->
+    <insert id="save" parameterType="Blog">
+        insert into t_blog(bid,title,userId,userName,date,context) values (#{bid},#{title},#{userId},#{userName},#{date},#{context})
+    </insert>
+
+
+</mapper>
