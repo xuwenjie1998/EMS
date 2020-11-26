@@ -10,7 +10,7 @@
 
     <!--查找一个-->
     <select id="findOne" resultType="Blog">
-        select
+        select bid,title,userId,userName,date,context from t_blog where bid=#{bid}
     </select>
 
     <!--添加博客-->

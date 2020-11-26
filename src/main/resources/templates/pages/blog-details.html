@@ -335,7 +335,7 @@
                         <article class="post p-relative">
                             <div class="post-wrapper">
                                 <div class="post-img animate-img mb-xl-20">
-                                    <img src="assets/images/blog/blog_large.jpg" class="image-fit" alt="img">
+                                    <img th:src="@{/assets/images/blog/blog_large.jpg}" class="image-fit" alt="img">
                                 </div>
                                 <div class="blog-meta bg-custom-white">
                                     <div class="post-meta-box mb-xl-20">
@@ -365,17 +365,17 @@
                                         </div>
                                     </div>
                                     <div class="post-heading p-relative">
-                                        <h2><a href="#" class="text-custom-black">Various versions have evole over the years</a></h2>
+                                        <h2><a href="#" class="text-custom-black" th:text="${BlogOne.getTitle()}"></a></h2>
                                     </div>
                                     <div class="post-author mb-xl-20">
                                         <div class="author-img animate-img">
                                             <a href="blog-details.html">
-                                                <img src="assets/images/blog/author-img.png" class="rounded-circle" alt="#">
+                                                <img th:src="@{/assets/images/blog/author-img.png}" class="rounded-circle" alt="#">
                                             </a>
                                         </div>
-                                        <span class="text-theme fs-14">By <a href="blog-details.html" class="text-custom-black fw-500">Admin</a></span>
+                                        <span class="text-theme fs-14">By <a href="blog-details.html" class="text-custom-black fw-500" th:text="${BlogOne.getUserName()}">Admin</a></span>
                                     </div>
-                                    <p class="text-light-dark">
+                                    <p class="text-light-dark" th:text="${BlogOne.getContext()}">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                     </p>
                                     <p class="text-light-dark">
@@ -447,7 +447,7 @@
                         <div class="post-author bg-light-white padding-15 mb-xl-20">
                             <div class="author-img animate-img mb-sm-20">
                                 <a href="#">
-                                    <img src="assets/images/blog/author-img.png" class="image-fit" alt="author-img">
+                                    <img th:src="@{/assets/images/blog/author-img.png}" class="image-fit" alt="author-img">
                                 </a>
                             </div>
                             <div class="author-caption">

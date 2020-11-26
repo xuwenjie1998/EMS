@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.jws.WebParam;
 import javax.management.ValueExp;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,9 +22,6 @@ import java.util.List;
  */
 @Controller
 public class IndexController {
-
-    @Autowired
-    BlogService blogService;
 
     @GetMapping(value = "/index")
     public String toIndex() {
@@ -33,20 +33,9 @@ public class IndexController {
         return "ems/regist";
     }
 
-    @GetMapping(value = "toSave")
+    @GetMapping(value = "/toSave")
     public String toSave() {
         return "ems/addEmp";
     }
 
-    @GetMapping(value = "indexPage")
-    public String toIndexPage(Model model){
-        List<Blog> blogs = blogService.findAll();
-        model.addAttribute("BlogList",blogs);
-        return "pages/blog";
-    }
-
-    @GetMapping(value = "blogDetails")
-    public String toBlogDetail(Model model){
-        return "pages/blog-details";
-    }
 }
