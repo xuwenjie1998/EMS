@@ -72,14 +72,9 @@ public class UserController {
         if (login != null) {
             return "redirect:/emp/findAll";
         } else {
-            return "redirect:/index";
+            return "redirect:/indexPage";
         }
     }
 
-
-    @PostMapping(value = "/test")
-    public String indexPage(String username) {
-        
-    }
 
 }

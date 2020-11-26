@@ -31,7 +31,7 @@ public class IndexController {
 
     @GetMapping(value = "indexPage")
     public String toIndexPage(){
-        return "pages/index";
+        return "pages/blog";
     }
 
 }
