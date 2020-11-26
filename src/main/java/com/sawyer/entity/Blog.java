@@ -10,8 +10,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Blog {
+    private Integer bid;
     private String title;
-    private String userid;
-    private String username;
+    private String userId;
+    private String userName;
     private Date date;
+    private String context;
 }

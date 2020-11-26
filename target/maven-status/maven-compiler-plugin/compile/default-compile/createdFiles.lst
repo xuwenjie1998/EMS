@@ -1,4 +1,5 @@
 com\sawyer\utils\ValidateImageCodeUtils.class
+com\sawyer\service\BlogService.class
 com\sawyer\service\UserService.class
 com\sawyer\dao\EmpDAO.class
 com\sawyer\controller\EmpControlelr.class
@@ -8,7 +9,11 @@ com\sawyer\controller\UserController.class
 com\sawyer\EmsThymeleafApplication.class
 com\sawyer\utils\ValidateImageCodeUtils$SecurityCodeLevel.class
 com\sawyer\entity\User.class
+com\sawyer\dao\BlogDao.class
+com\sawyer\controller\BlogDetailsController.class
 com\sawyer\dao\UserDAO.class
 com\sawyer\service\EmpServiceImpl.class
+com\sawyer\entity\Blog.class
 com\sawyer\service\EmpService.class
+com\sawyer\service\BlogServiceImpl.class
 com\sawyer\controller\IndexController.class

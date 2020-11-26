@@ -326,16 +326,17 @@
     <section class="section-padding bg-light-white our_articles">
         <div class="container">
             <div class="row">
+
                 <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
+                <article class="col-lg-4 col-md-6 post mb-xl-30" th:each="list,a:${BlogList}">
                     <div class="post-wrapper bx-wrapper">
                         <div class="post-img animate-img">
-                            <a href="#">
+                            <a href="#" th:href="@{/blogDetails}">
                                 <img src="assets/images/blog/blog_grid_1.jpg" class="full-width" alt="img">
                             </a>
                             <div class="post-date">
                                 <div class="text-custom-white fw-600 date bg-custom-blue">21</div>
-                                <div class="text-custom-white year">Jan 2019</div>
+                                <div class="text-custom-white year" th:text="${list.getDate()}"></div>
                             </div>
                         </div>
                         <div class="blog-meta padding-20 bg-custom-white p-relative">
@@ -353,351 +354,21 @@
                             </div>
                             <div class="post-heading">
                                 <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Repeat predefined chunks
-</a>
+                                    <a href="#" class="text-custom-black fw-600 fs-20" th:text="${list.getTitle()}"></a>
                                 </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
+                                <p class="text-light-dark no-margin" th:text="${list.getContext()}"></p>
                             </div>
                         </div>
                         <div class="post-footer">
                             <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
+                                <cite class="text-custom-black">Post By <a href="#" th:text="${list.getUserName()}"></a></cite>
                             </div>
                             <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
                         </div>
                     </div>
                 </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_2.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">20</div>
-                                <div class="text-custom-white year">Feb 2020</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 30 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 20 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Making it look readable
-</a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_3.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">22</div>
-                                <div class="text-custom-white year">Feb 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 10 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 26 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Treatise on the theory </a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_4.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">22</div>
-                                <div class="text-custom-white year">Feb 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 10 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 26 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Treatise on the theory </a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_5.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">22</div>
-                                <div class="text-custom-white year">Feb 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 10 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 26 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Treatise on the theory </a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_6.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">20</div>
-                                <div class="text-custom-white year">Jan 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 3 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 2 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">scrambe it to make a type</a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-               <article class="col-lg-4 col-md-6 post mb-xl-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_7.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">22</div>
-                                <div class="text-custom-white year">Feb 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 10 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 26 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Treatise on the theory </a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post mb-sm-30">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_8.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">20</div>
-                                <div class="text-custom-white year">Jan 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 3 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 2 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">A Galley of type and scrambe</a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
-                <!-- article -->
-                <article class="col-lg-4 col-md-6 post">
-                    <div class="post-wrapper bx-wrapper">
-                        <div class="post-img animate-img">
-                            <a href="#">
-                                <img src="assets/images/blog/blog_grid_9.jpg" class="full-width" alt="img">
-                            </a>
-                            <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue">20</div>
-                                <div class="text-custom-white year">Jan 2019</div>
-                            </div>
-                        </div>
-                        <div class="blog-meta padding-20 bg-custom-white p-relative">
-                            <div class="post-meta mb-xl-20">
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-comment"></i>
-                                    </span> 3 Comments
-                                </a>
-                                <a href="#" class="text-light-dark mr-1">
-                                    <span class="text-custom-blue">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </span> 2 Likes
-                                </a>
-                            </div>
-                            <div class="post-heading">
-                                <h2>
-                                    <a href="#" class="text-custom-black fw-600 fs-20">Various versions have evole</a>
-                                </h2>
-                                <p class="text-light-dark no-margin">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</p>
-                            </div>
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-author">
-                                <cite class="text-custom-black">Post By <a href="#">Jhon Deo</a></cite>
-                            </div>
-                            <a href="#" class="text-custom-blue fs-14 fs-600">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- article -->
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <nav>

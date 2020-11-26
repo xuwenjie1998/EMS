@@ -10,7 +10,7 @@ import java.util.List;
 public interface BlogDao {
     List<Blog> findAll();
 
-    Blog findOne();
+    Blog findOne(Integer id);
 
     void save(Blog blog);
 

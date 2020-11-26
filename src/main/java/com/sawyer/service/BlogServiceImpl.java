@@ -3,12 +3,16 @@ package com.sawyer.service;
 import com.sawyer.dao.BlogDao;
 import com.sawyer.entity.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * 博客业务层,增删改查
  */
+@Service
+@Transactional
 public class BlogServiceImpl implements BlogService{
 
     @Autowired
@@ -20,8 +24,8 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    public Blog findOne() {
-        return blogDao.findOne();
+    public Blog findOne(Integer id) {
+        return blogDao.findOne(id);
     }
 
     @Override
