@@ -24,4 +24,8 @@
         where bid=#{bid}
     </update>
 
+    <!--删除博客-->
+    <delete id="delete" parameterType="Integer">
+        delete from t_blog where bid = #{bid}
+    </delete>
 </mapper>

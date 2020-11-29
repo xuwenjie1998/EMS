@@ -226,16 +226,26 @@
                             <div>
                                 <img th:src="@{/assets/images/blog/author-img.png}" style="width: 60px;height: 60px;" class="rounded-circle " alt="#">
                                 <span class="text-theme" style="text-align: right" th:text="${session != null} ? ${session.username}: ''">Admin</span>
-                                <span class="arrow"></span>
+<!--                                <span class="arrow"></span>-->
                             </div>
-                            <ul >
-                                <li >
-                                    <a th:href="@{/blog/indexPage}" class="text-custom-blue">个人主页</a>
-                                </li>
+
+                            <span th:if="${session.userone != null}">
+                                <ul >
+                                    <li >
+                                        <a th:href="@{/blog/indexPage}" class="text-custom-blue">个人主页</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/blog/blogNew}" class="text-custom-blue">编写博客</a>
+                                    </li>
+                                </ul>
+                            </span>
+
+                            <span th:if="${session.userone == null}">
                                 <li>
-                                    <a th:href="@{/pages/blogNew.html}" class="text-custom-blue">编写博客</a>
+                                    <a th:href="@{/user/toLogin}" class="text-custom-blue">请登录</a>
                                 </li>
-                            </ul>
+                            </span>
+
 
                             <div class="hamburger-menu">
                                 <div class="menu-btn">
@@ -284,8 +294,8 @@
                                 <img src="" class="full-width" alt="img" th:src="@{/assets/images/blog/blog_grid_1.jpg}">
                             </a>
                             <div class="post-date">
-                                <div class="text-custom-white bg-custom-blue fw-600 date" th:text="${list.date.getDay()}"></div>
-                                <div class="text-custom-white year" th:text="${list.date}"></div>
+                                <div class="text-custom-white bg-custom-blue fw-600 date" th:text="${list.date.getDate()}"></div>
+                                <div class="text-custom-white year" th:text="${new java.sql.Date(list.date)}"></div>
                             </div>
                         </div>
                         <div class="blog-meta padding-20 bg-custom-white p-relative">

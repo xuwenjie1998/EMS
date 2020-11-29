@@ -34,7 +34,7 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Integer id) {
         blogDao.delete(id);
     }
 

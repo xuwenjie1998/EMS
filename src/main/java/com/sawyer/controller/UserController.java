@@ -1,6 +1,7 @@
 package com.sawyer.controller;
 
 import com.sawyer.entity.User;
+import com.sawyer.service.EmpService;
 import com.sawyer.service.UserService;
 import com.sawyer.utils.ValidateImageCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     /**
      * 注册方法
@@ -66,11 +68,29 @@ public class UserController {
         ImageIO.write(image, "png", os);
     }
 
+    /**
+     * Get请求跳转到登录页面
+     * @return
+     */
+    @GetMapping("toLogin")
+    public String toLogin(){
+        return "redirect:/index";
+    }
+
+    /**
+     * Post请求跳转到登录页面
+     * @param username
+     * @param password
+     * @param session
+     * @return
+     */
     @PostMapping(value = "/login")
     public String login(String username, String password,HttpSession session) {
         User login = userService.login(username, password);
+        User one = userService.findOne(username);
         if (login != null) {
             session.setAttribute("username",username);
+            session.setAttribute("userone",one);
             return "redirect:/emp/findAll";
         } else {
             return "redirect:/index";

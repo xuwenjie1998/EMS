@@ -361,7 +361,7 @@
                                             </a>
                                             <div class="post-date">
                                                 <div class="text-custom-white bg-custom-blue fw-600 date" th:text="${BlogOne.date.getDate()}">20</div>
-                                                <div class="text-custom-white year" th:text="${BlogOne.date}">Jan 2019</div>
+                                                <div class="text-custom-white year" th:text="${new java.sql.Date(BlogOne.date)}">Jan 2019</div>
                                             </div>
                                         </div>
                                     </div>
@@ -374,12 +374,13 @@
                                                 <img th:src="@{/assets/images/blog/author-img.png}" class="rounded-circle" alt="#">
                                             </a>
                                         </div>
-                                        <span class="text-theme fs-14">By <a href="blog-details.html" class="text-custom-black fw-500" th:text="${BlogOne.getUserName()}">Admin</a></span>
-                                        &nbsp;&nbsp;
-                                        <div class="pagination-btn">
+                                        <span class="text-theme fs-14">By &nbsp;&nbsp;&nbsp;&nbsp;<a href="blog-details.html" class="text-custom-black fw-500" th:text="${BlogOne.getUserName()}">Admin</a></span>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div class="pagination-btn" th:if="${session.userone == null}? false : (${session.userone.getId()} == ${BlogOne.getUserId()})">
                                             <nav>
                                                 <ul class="pagination" >
-                                                    <li class="page-item"><a class="page-link" th:href="@{/blogEdit/findBlog(bid=${BlogOne.getBid()})}">编辑博客</a></li>
+                                                    <li class="page-item"><a class="page-link" th:href="@{/blogEdit/findBlog(bid=${BlogOne.getBid()})}">编辑</a></li>
+                                                    <li class="page-item"><a class="page-link" th:href="@{/blogEdit/delete(bid=${BlogOne.getBid()})}">删除</a></li>
                                                 </ul>
                                             </nav>
                                         </div>

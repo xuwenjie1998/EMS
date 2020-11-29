@@ -8,4 +8,6 @@ public interface UserDAO {
 
     //在mybatis中传递多个参数需要参数的绑定
     User login(@Param("username") String username, @Param("password") String password);
+
+    User findOne(String username);
 }

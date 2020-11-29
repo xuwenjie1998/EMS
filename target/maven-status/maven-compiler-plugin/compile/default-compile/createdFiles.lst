@@ -5,6 +5,7 @@ com\sawyer\service\UserServiceImpl.class
 com\sawyer\utils\ValidateImageCodeUtils$SecurityCodeLevel.class
 com\sawyer\dao\BlogDao.class
 com\sawyer\controller\BlogDetailsController.class
+com\sawyer\utils\DateFormat.class
 com\sawyer\controller\BlogEditController.class
 com\sawyer\controller\IndexController.class
 com\sawyer\utils\ValidateImageCodeUtils.class

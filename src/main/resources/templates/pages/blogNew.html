@@ -56,12 +56,11 @@
             <div class="col-12">
                 <div class="blog-details bx-wrapper bg-custom-white padding-20">
                     <!-- article -->
-                    <form th:action="@{/blogEdit/update}" method="post">
+                    <form th:action="@{/blogEdit/save}" method="post">
                         <!--    隐藏域提交 用户id和date -->
-                        <input type="hidden" name="bid" th:value="${one.getBid()}">
-                        <input type="hidden" name="userId" th:value="${one.getUserId()}">
-                        <input type="hidden" name="userName" th:value="${one.getUserName()}">
-                        <input type="hidden" name="date" th:value="${#dates.format(new java.util.Date().getTime(),'yyyy-MM-dd')}">
+                        <input type="hidden" name="userId" th:value="${session.userone.getId()}">
+                        <input type="hidden" name="userName" th:value="${session.username}">
+                        <input type="hidden" name="date" th:value="${#dates.format(new java.util.Date(),'yyyy-MM-dd HH:mm:ss')}">
                     <article class="post p-relative">
                         <div class="post-wrapper">
                             <div class="post-img animate-img mb-xl-20">
@@ -69,7 +68,7 @@
                             </div>
                             <div class="blog-meta bg-custom-white">
                                 <div class="post-heading p-relative">
-                                    <h2><input type="text" class="text-custom-black" name="title" th:value="${one.getTitle()}"></h2>
+                                    标题：<h2><input type="text" class="text-custom-black" name="title"></h2>
                                 </div>
                                 <div class="post-author mb-xl-20">
                                     <div class="author-img animate-img">
@@ -77,17 +76,18 @@
                                             <img th:src="@{/assets/images/blog/author-img.png}" class="rounded-circle" alt="#">
                                         </a>
                                     </div>
-                                    <span class="text-theme fs-14">By <a href="#" class="text-custom-black fw-500" th:text="${one.getUserName()}">Admin</a></span>
+                                    <span class="text-theme fs-14">By <a href="#" class="text-custom-black fw-500" th:text="${session.username}">Admin</a></span>
                                 </div>
                                 <div class="quote-box mb-xl-20">
                                     <blockquote class="bg-light-white">
                                         <span> <i class="fa fa-quote-left text-custom-white"></i> </span>
                                         <p class="text-custom-black fs-16 no-margin">
-                                            <textarea name="context"  rows="10" cols="110" th:text="${one.getContext()}"></textarea></p>
+                                            编写Blog:<br>
+                                            <textarea name="context"  rows="10" cols="110"></textarea></p>
                                     </blockquote>
                                 </div>
                                 <p>
-                                    <input type="submit" class="button" value="提交修改"/>
+                                    <input type="submit" class="button" value="提交"/>
                                 </p>
                             </div>
                         </div>
@@ -95,20 +95,20 @@
                     <!-- article -->
                     <hr>
                     <!-- tags & social -->
-                    <div class="post-details-tags-social mb-xl-20">
-                        <div class="row no-margin">
-                            <div class="col-md-6">
-                                <div class="tags-box">
-                                    <span class="fs-18 text-light-dark"><i class="fas fa-tags"></i></span>
-                                    <div class="tags">
-                                        <a href="#">Travel</a>
-                                        <a href="#">Tour</a>
-                                        <a href="#">Agent</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="post-details-tags-social mb-xl-20">-->
+<!--                        <div class="row no-margin">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="tags-box">-->
+<!--                                    <span class="fs-18 text-light-dark"><i class="fas fa-tags"></i></span>-->
+<!--                                    <div class="tags">-->
+<!--                                        <a href="#">Travel</a>-->
+<!--                                        <a href="#">Tour</a>-->
+<!--                                        <a href="#">Agent</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- tags & social -->
                     </form>
                 </div>

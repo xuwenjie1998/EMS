@@ -2,6 +2,7 @@ package com.sawyer.service;
 
 import com.sawyer.dao.UserDAO;
 import com.sawyer.entity.User;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,4 +25,10 @@ public class UserServiceImpl implements UserService {
     public User login(String username, String password) {
         return userDAO.login(username, password);
     }
+
+    @Override
+    public User findOne(String username) {
+        return userDAO.findOne(username);
+    }
+
 }

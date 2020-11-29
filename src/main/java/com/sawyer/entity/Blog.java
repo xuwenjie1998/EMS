@@ -18,7 +18,7 @@ public class Blog {
     /**
      * 解决表单提交的date格式日期不匹配
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
     private String context;

@@ -11,4 +11,9 @@
         select  id,username,realname,password,sex from t_user
         where username=#{username} and password=#{password}
     </select>
+
+    <select id="findOne" resultType="User">
+        select  id,username,realname,password,sex from t_user
+        where username=#{username}
+    </select>
 </mapper>

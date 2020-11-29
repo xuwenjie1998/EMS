@@ -3,6 +3,7 @@ package com.sawyer.controller;
 import com.sawyer.entity.Blog;
 import com.sawyer.entity.Emp;
 import com.sawyer.service.BlogService;
+import com.sawyer.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,13 +40,23 @@ public class BlogEditController {
     public String update(Blog blog) {
         System.out.println(blog);
         blogService.update(blog);
-//        return "redirect:/blogEdit/findBlog";
         return "redirect:/blog/indexPage";
     }
 
+    /**
+     * 新增blog
+     * @param blog
+     * @return
+     */
     @PostMapping("/save")
-    public String modify(Blog blog){
+    public String save(Blog blog){
         blogService.save(blog);
-        return "redirect:/blog/blogDetails";
+        return "redirect:/blog/indexPage";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("bid") Integer bid){
+        blogService.delete(bid);
+        return "redirect:/blog/indexPage";
     }
 }
