@@ -18,5 +18,10 @@
         insert into t_blog(bid,title,userId,userName,date,context) values (#{bid},#{title},#{userId},#{userName},#{date},#{context})
     </insert>
 
+    <!--修改博客-->
+    <update id="update" parameterType="Blog">
+        update t_blog set title=#{title},userName=#{userName},date=#{date},context=#{context}
+        where bid=#{bid}
+    </update>
 
 </mapper>

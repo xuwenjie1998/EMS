@@ -67,12 +67,13 @@ public class UserController {
     }
 
     @PostMapping(value = "/login")
-    public String login(String username, String password) {
+    public String login(String username, String password,HttpSession session) {
         User login = userService.login(username, password);
         if (login != null) {
+            session.setAttribute("username",username);
             return "redirect:/emp/findAll";
         } else {
-            return "redirect:/indexPage";
+            return "redirect:/index";
         }
     }
 

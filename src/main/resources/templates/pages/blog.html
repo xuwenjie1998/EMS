@@ -40,7 +40,7 @@
     <!-- CSS for IE -->
     <!--[if lte IE 9]>
         <link rel="stylesheet" type="text/css" th:href="@{/css/ie.css}" />
-    <![endif]-->   
+    <![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -132,7 +132,7 @@
                                                 <li class="menu-item">
                                                     <a href="homepage-2.html" class="text-custom-white">Homepage 2</a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </li>
                                         <li class="menu-item menu-item-has-children">
@@ -154,72 +154,6 @@
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="hotel-detail.html" class="text-custom-white">Hotels Detail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#" class="text-light-dark">Flights</a>
-                                            <ul class="custom sub-menu">
-                                                <li class="menu-item menu-item-has-children">
-                                                    <a href="#" class="text-custom-white">Flights Grid</a>
-                                                    <ul class="custom sub-menu">
-                                                        <li class="menu-item">
-                                                            <a href="flights.html" class="text-custom-white">Full Width</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="flights-left-sidebar.html" class="text-custom-white">Left Sidebar</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="flights-right-sidebar.html" class="text-custom-white">Right Sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="flight-detail.html" class="text-custom-white">Flights Detail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#" class="text-light-dark">Cruise</a>
-                                            <ul class="custom sub-menu">
-                                                <li class="menu-item menu-item-has-children">
-                                                    <a href="#" class="text-custom-white">Cruise Grid</a>
-                                                    <ul class="custom sub-menu">
-                                                        <li class="menu-item">
-                                                            <a href="cruise.html" class="text-custom-white">Full Width</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="cruise-left-sidebar.html" class="text-custom-white">Left Sidebar</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="cruise-right-sidebar.html" class="text-custom-white">Right Sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="cruise-detail.html" class="text-custom-white">Cruise Detail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#" class="text-light-dark">Cars</a>
-                                            <ul class="custom sub-menu">
-                                                <li class="menu-item menu-item-has-children">
-                                                    <a href="#" class="text-custom-white">Cars Grid</a>
-                                                    <ul class="custom sub-menu">
-                                                        <li class="menu-item">
-                                                            <a href="cars.html" class="text-custom-white">Full Width</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="cars-left-sidebar.html" class="text-custom-white">Left Sidebar</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="cars-right-sidebar.html" class="text-custom-white">Right Sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="car-detail.html" class="text-custom-white">Cars Detail</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -288,6 +222,21 @@
                                     <a href="booking.html" class="btn-first btn-submit">Enquiry Now</a>
                                 </div>
                             </div>
+                            <!--    登录回显至主页    -->
+                            <div>
+                                <img th:src="@{/assets/images/blog/author-img.png}" style="width: 60px;height: 60px;" class="rounded-circle " alt="#">
+                                <span class="text-theme" style="text-align: right" th:text="${session != null} ? ${session.username}: ''">Admin</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <ul >
+                                <li >
+                                    <a th:href="@{/blog/indexPage}" class="text-custom-blue">个人主页</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/pages/blogNew.html}" class="text-custom-blue">编写博客</a>
+                                </li>
+                            </ul>
+
                             <div class="hamburger-menu">
                                 <div class="menu-btn">
                                     <span></span>
@@ -335,8 +284,8 @@
                                 <img src="" class="full-width" alt="img" th:src="@{/assets/images/blog/blog_grid_1.jpg}">
                             </a>
                             <div class="post-date">
-                                <div class="text-custom-white fw-600 date bg-custom-blue" th:text="${list.getDate().getDay()}"></div>
-                                <div class="text-custom-white year" th:text="${list.getDate().getYear()}"></div>
+                                <div class="text-custom-white bg-custom-blue fw-600 date" th:text="${list.date.getDay()}"></div>
+                                <div class="text-custom-white year" th:text="${list.date}"></div>
                             </div>
                         </div>
                         <div class="blog-meta padding-20 bg-custom-white p-relative">

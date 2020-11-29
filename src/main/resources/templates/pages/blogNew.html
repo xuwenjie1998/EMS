@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" co
+          ntent="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="#">
+    <meta name="description" content="#">
+    <title>添加博客</title>
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{/assets/images/favicon.ico}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{/assets/images/favicon.ico}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{/assets/images/favicon.ico}">
+    <link rel="apple-touch-icon-precomposed" th:href="@{/assets/images/favicon.ico}">
+    <link rel="shortcut icon" th:href="@{/assets/images/favicon.ico}">
+    <!-- Bootstrap -->
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link th:href="@{/assets/css/font-awesome.css}" rel="stylesheet">
+    <!-- Flaticons -->
+    <link th:href="@{/assets/css/font/flaticon.css}" rel="stylesheet">
+    <!-- Slick Slider -->
+    <link th:href="@{/assets/css/slick.css}" rel="stylesheet">
+    <!-- Range Slider -->
+    <link th:href="@{/assets/css/ion.rangeSlider.min.css}" rel="stylesheet">
+    <!-- Datepicker -->
+    <link th:href="@{/assets/css/datepicker.css}" rel="stylesheet">
+    <!-- magnific popup -->
+    <link th:href="@{/assets/css/magnific-popup.css}" rel="stylesheet">
+    <!-- Nice Select -->
+    <link th:href="@{/assets/css/nice-select.css}" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/assets/css/style.css}" rel="stylesheet">
+    <!-- Custom Responsive -->
+    <link th:href="@{/assets/css/responsive.css}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- CSS for IE -->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <!-- place -->
+</head>
+<body>
+
+<section class="section-padding bg-light-white blog-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-details bx-wrapper bg-custom-white padding-20">
+                    <!-- article -->
+                    <form th:action="@{/blogEdit/update}" method="post">
+                        <!--    隐藏域提交 用户id和date -->
+                        <input type="hidden" name="bid" th:value="${one.getBid()}">
+                        <input type="hidden" name="userId" th:value="${one.getUserId()}">
+                        <input type="hidden" name="userName" th:value="${one.getUserName()}">
+                        <input type="hidden" name="date" th:value="${#dates.format(new java.util.Date().getTime(),'yyyy-MM-dd')}">
+                    <article class="post p-relative">
+                        <div class="post-wrapper">
+                            <div class="post-img animate-img mb-xl-20">
+                                <img th:src="@{/assets/images/blog/blog_large.jpg}" class="image-fit" alt="img">
+                            </div>
+                            <div class="blog-meta bg-custom-white">
+                                <div class="post-heading p-relative">
+                                    <h2><input type="text" class="text-custom-black" name="title" th:value="${one.getTitle()}"></h2>
+                                </div>
+                                <div class="post-author mb-xl-20">
+                                    <div class="author-img animate-img">
+                                        <a href="blog-details.html">
+                                            <img th:src="@{/assets/images/blog/author-img.png}" class="rounded-circle" alt="#">
+                                        </a>
+                                    </div>
+                                    <span class="text-theme fs-14">By <a href="#" class="text-custom-black fw-500" th:text="${one.getUserName()}">Admin</a></span>
+                                </div>
+                                <div class="quote-box mb-xl-20">
+                                    <blockquote class="bg-light-white">
+                                        <span> <i class="fa fa-quote-left text-custom-white"></i> </span>
+                                        <p class="text-custom-black fs-16 no-margin">
+                                            <textarea name="context"  rows="10" cols="110" th:text="${one.getContext()}"></textarea></p>
+                                    </blockquote>
+                                </div>
+                                <p>
+                                    <input type="submit" class="button" value="提交修改"/>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- article -->
+                    <hr>
+                    <!-- tags & social -->
+                    <div class="post-details-tags-social mb-xl-20">
+                        <div class="row no-margin">
+                            <div class="col-md-6">
+                                <div class="tags-box">
+                                    <span class="fs-18 text-light-dark"><i class="fas fa-tags"></i></span>
+                                    <div class="tags">
+                                        <a href="#">Travel</a>
+                                        <a href="#">Tour</a>
+                                        <a href="#">Agent</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tags & social -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog -->
+
+
+</body>
+</html>
