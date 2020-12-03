@@ -92,7 +92,14 @@ public class Test {
 //            System.out.println(say);
 //        }
         Math.abs(1);
-        
+
+        String str = "localhost:8080//test";
+        String[] split = str.split(":");
+        for (String string : split){
+            String host = split[0];
+            System.out.println("host:  "+host);
+//            System.out.println(string);
+        }
     }
 
 }
